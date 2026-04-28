@@ -1,11 +1,11 @@
 class Keymaprd < Formula
   desc "Remap Logitech MX Master mouse buttons to keyboard shortcuts on macOS"
-  homepage "https://github.com/choolake/KeyMapr"
-  url "https://github.com/choolake/KeyMapr/archive/refs/tags/v0.1.2.tar.gz"
+  homepage "https://github.com/choolake/KeyMaprd"
+  url "https://github.com/choolake/KeyMaprd/archive/refs/tags/v0.1.2.tar.gz"
   # Update sha256 after tagging: `curl -sL <url> | shasum -a 256`
-  sha256 "4fbedefd79d94d0ca8cfb9d8ead0549eff86de72511aef65c6fbd4699079c30b"
+  sha256 "7259fb115f5c8f97fe63dd095a854fe23f2fb97a5ae6314d32f82e51052399c4"
   license "MIT"
-  head "https://github.com/choolake/KeyMapr.git", branch: "main"
+  head "https://github.com/choolake/KeyMaprd.git", branch: "main"
 
   depends_on "go" => :build
   depends_on :macos
