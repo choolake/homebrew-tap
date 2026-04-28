@@ -1,0 +1,29 @@
+name: brew test-bot
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  test-tap:
+    runs-on: macos-latest
+
+    steps:
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Tap this repo
+        run: brew tap choolake/tap https://github.com/choolake/homebrew-tap.git
+
+      - name: brew audit
+        # Checks formula for style, metadata, and common mistakes
+        run: brew audit --strict choolake/tap/keymaprd
+
+      - name: brew install
+        # Actually builds and installs from source to verify the build works
+        run: brew install --build-from-source choolake/tap/keymaprd
+
+      - name: brew test
+        # Runs the `test do` block in the formula (checks --version output)
+        run: brew test choolake/tap/keymaprd
