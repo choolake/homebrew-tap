@@ -14,7 +14,7 @@ jobs:
         uses: Homebrew/actions/setup-homebrew@master
 
       - name: Tap this repo
-        run: brew tap choolake/tap https://github.com/choolake/homebrew-tap.git
+        run: brew tap choolake/tap https://github.com/choolake/homebrew-tap
 
       - name: brew audit
         # Checks formula for style, metadata, and common mistakes
