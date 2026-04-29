@@ -20,18 +20,12 @@ class Keymaprd < Formula
 
   def caveats
     <<~EOS
-      To start keymaprd automatically at login:
-        keymaprd install
-
       keymaprd requires Accessibility access to capture mouse buttons.
       Grant it in System Settings → Privacy & Security → Accessibility.
 
-      Config file location:
-        ~/.config/keymaprd/config.json
-
-      Copy the example config to get started:
-        mkdir -p ~/.config/keymaprd
-        cp #{HOMEBREW_PREFIX}/share/keymaprd/config.example.json ~/.config/keymaprd/config.json
+      Getting started:
+        keymaprd        ← first run launches an interactive setup wizard
+        keymaprd setup  ← re-run the wizard any time to change mappings
     EOS
   end
 
