@@ -13,6 +13,9 @@ class Keymaprd < Formula
 
   def install
     system "go", "build", "-o", bin/"keymaprd", "./cmd/keymaprd/"
+    # Install example config so users can copy it to get started.
+    # Available at: #{HOMEBREW_PREFIX}/share/keymaprd/config.example.json
+    (share/"keymaprd").install "config.example.json"
   end
 
   def caveats
